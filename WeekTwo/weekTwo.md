@@ -1,4 +1,4 @@
-##W eek 2 - Data Structures
+## Week 2 - Data Structures
 
 The focus of week 2 is on linked lists, strings and matrix-based questions. The goal is to learn the common routines dealing with linked lists, traversing matrices and sequence analysis (arrays/strings) techniques such as sliding window.
 
@@ -165,10 +165,6 @@ class Solution:
             result = max(result, end - start + 1)
             
         return result
-                
-            
-        
-          
 ```
 - Longest Substring Without Repeating Characters
 - Minimum Window Substring
