@@ -1,1 +1,11 @@
-theme: jekyll-theme-hacker
+theme: jekyll-theme-minimal
+title: GitHub pages template
+description: Leetcode questions solved by Alaukik
+show_downloads: True
+navigation:
+  - title: Home
+    url: /
+  - title: Week One 
+    url: weekOne
+  - title: Week Two 
+    url: weekTwo
