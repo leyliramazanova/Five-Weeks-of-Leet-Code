@@ -52,7 +52,7 @@ class Solution:
 ```
 
 
-- Valid Anagram
+- [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
 ```python
 class Solution:
