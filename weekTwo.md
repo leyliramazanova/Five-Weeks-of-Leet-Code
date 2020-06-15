@@ -140,16 +140,13 @@ class Solution:
 ```python
 class Solution:
     def characterReplacement(self, s, k):
-        
         # Dict keeping tracks of the frequency of the words in the window
         count = {}
-        
         # max_count = count of the most frequently occuring element in the window
         # result = the size of the sub array that is returned
         # start = starting index of the window
         # end - ending index if the window
         max_count = result = start = 0
-        
         for end in range(len(s)):
             count[s[end]] = count.get(s[end], 0) + 1
             max_count = max(max_count, count[s[end]])
@@ -157,16 +154,58 @@ class Solution:
             # max_count = non repalced
             # (end - start + 1) - max_count = replaced
             if (end - start + 1) - max_count > k:
-                
             #Increase the window by 1 and remove the frequency of the starting window
                 count[s[start]] -= 1
                 start += 1
-                
             result = max(result, end - start + 1)
-            
         return result
 ```
-- Longest Substring Without Repeating Characters
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+    - Sliding Window Inefficient Approach
+    ```python
+        class Solution:
+            def lengthOfLongestSubstring(self, s: str) -> int:
+                if len(s) == 1:
+                    return 1
+                start = result = max_count = 0
+                non_repeating = {}
+                for end in range(len(s)):
+                    current = s[end]
+                    if current not in non_repeating.values():
+                        non_repeating[end] = current
+                    else:
+                        keys = list(non_repeating.keys()).copy()
+                        end_one = end
+                        for i in keys:
+                            if non_repeating[i] == s[end]:
+                                end_one = i
+                                del non_repeating[i]
+                                break
+                            if i <= end_one:
+                                del non_repeating[i]
+                        non_repeating[end] = current
+                    
+                    max_count = len(non_repeating)
+                    result = max(max_count, result)
+                return result
+    ```
+  - Sliding Window Optimised
+  
+  ```python
+    class Solution:
+        def lengthOfLongestSubstring(self, s: str) -> int:
+            start = 0
+            max_len = 0
+            used_set = {}
+            for end in range(len(s)):
+                if s[end] in used_set and start <= used_set[s[end]]:
+                    start = used_set[s[end]] + 1
+                else:
+                    max_len = max(max_len, end - start + 1)
+                used_set[s[end]] = end
+            return max_len
+    ```
+  
 - Minimum Window Substring
 - Number of Islands
 - Remove Nth Node From End Of List
