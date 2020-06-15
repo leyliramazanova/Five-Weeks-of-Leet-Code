@@ -9,3 +9,5 @@ navigation:
     url: weekOne
   - title: Week Two 
     url: weekTwo
+  - title: Week Three 
+    url: weekThree
