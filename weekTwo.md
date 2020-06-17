@@ -206,7 +206,59 @@ class Solution:
             return max_len
     ```
   
-- Minimum Window Substring
+- [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/solution/)
+
+```python
+class Solution:
+    def minWindow(self, s, t):
+        
+        #minor optimisation
+        if s == t:
+            return s
+
+        # The sliding window with a count of all unique characters
+        window = {}
+        
+        #What the ideal counter would look like
+        ideal = Counter(t)
+        start = end = 0
+        range1 = range2 = None
+        max_len, progress,  required = float("inf"), 0, len(ideal)
+        
+        for end in range(len(s)):
+            
+            #consider each element
+            elem = s[end]
+            window[elem] = window.get(elem, 0) + 1
+            
+            # elem under condideration has same number of counts in ideal and windoq
+            if elem in ideal and window[elem] == ideal[elem]:
+                progress += 1
+                
+            
+            #decreasing the size of the window
+            while start <= end and progress == required:
+                
+                if end - start + 1 < max_len:
+                    max_len = end - start + 1
+                    range1, range2 = start, end
+                    
+                if ideal == window:
+                    return s[range1 : range2 + 1  ]
+                
+                elem_curr = s[start]
+                window[elem_curr] -= 1
+                
+                if elem_curr in ideal and window[elem_curr] < ideal[elem_curr]:
+                    progress -= 1       
+                start += 1  
+            end +=1
+            
+        return "" if max_len == float("inf") else s[range1 : range2 + 1]
+```
+
+    Time Complexity:  O(∣S∣+∣T∣) where |S| and |T| represent the lengths of strings  S and T.
+
 - Number of Islands
 - Remove Nth Node From End Of List
 - Palindromic Substrings
