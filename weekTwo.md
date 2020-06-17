@@ -259,7 +259,49 @@ class Solution:
 
     Time Complexity:  O(∣S∣+∣T∣) where |S| and |T| represent the lengths of strings  S and T.
 
-- Number of Islands
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/submissions/)
+```python
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        
+        if not grid:
+            return 0
+        
+        row = len(grid)
+        column = len(grid[0])
+        no_of_islands = 0
+        
+        visited = set()
+        
+        def bfs(ro, col):
+            stack = collections.deque()
+            stack.append((ro, col))
+            
+            while stack:
+                #.pop- is a dfs solution
+                # .popleft - is a bfs solution
+                row_pop, col_pop = stack.pop()
+                #top, bottom, left, right
+                directions = [[1, 0], [-1,0], [0,1], [0,-1]]
+                for r1, c1 in directions:
+                    r = r1 + row_pop
+                    c = c1 + col_pop
+                    if (r in range(row)) and (c in range(column)) and grid[r][c] == "1" and (r,c) not in visited:
+                        visited.add((r, c))
+                        stack.append((r,c))
+        
+        for ro in range(row):
+            for col in range(column):
+                element = grid[ro][col]
+                
+                if element == "1" and (ro, col) not in visited:
+                    bfs(ro, col)
+                    no_of_islands += 1
+        return no_of_islands
+```
+
+    Time Complexity:  O(|N∣) where |N| represents the length of the 2d array
+    
 - Remove Nth Node From End Of List
 - Palindromic Substrings
 - Pacific Atlantic Water Flow
