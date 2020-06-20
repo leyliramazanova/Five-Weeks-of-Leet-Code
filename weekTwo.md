@@ -300,8 +300,48 @@ class Solution:
         return no_of_islands
 ```
 
-    Time Complexity:  O(|N∣) where |N| represents the length of the 2d array
+    Time Complexity:  O(N) where N represents the length of the 2d array
     
-- Remove Nth Node From End Of List
-- Palindromic Substrings
+- [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/)
+
+```python
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        
+        dummy = ListNode(0)
+        dummy.next = head
+        
+        
+        point_1 = dummy
+        point_2 = dummy
+        
+        for i in range(n + 1):
+            point_2 = point_2.next
+        
+        while point_2 != None:
+            point_2 = point_2.next
+            point_1 = point_1.next
+        point_1.next = point_1.next.next    
+        return dummy.next
+```
+- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/submissions/)
+```python
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        
+        def expandFromMiddle(s, left, right):
+            counter = 0
+            while (left >= 0 and right < len(s) and s[left] == s[right]):
+                left -= 1
+                right +=1
+                counter += 1
+            return counter
+        counter = 0
+        
+        for i in range(len(s)):
+            len1 = expandFromMiddle(s, i, i)
+            len2 = expandFromMiddle(s, i, i + 1)
+            counter += len1 + len2
+        return counter
+```
 - Pacific Atlantic Water Flow
