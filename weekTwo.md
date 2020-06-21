@@ -344,4 +344,52 @@ class Solution:
             counter += len1 + len2
         return counter
 ```
-- Pacific Atlantic Water Flow
+- [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/submissions/)
+
+```python
+class Solution:
+    def pacificAtlantic(self, matrix: List[List[int]]) -> List[List[int]]:
+        
+        if not matrix:
+            return None
+        
+        visited_pacific = set()
+        visited_atlantic = set()
+        
+        row = len(matrix)
+        col = len(matrix[0])
+        
+        def dfs(i, j, sea_set):
+            
+            stack = collections.deque()
+            stack.append((i,j))
+            
+            directions = [(1,0), (-1, 0), (0, 1), (0,-1), (0,0)]
+            
+            while stack:
+                row_pop, col_pop = stack.pop()
+            
+                for r, c in directions:
+                    row_visit = row_pop + r
+                    col_visit = col_pop + c
+                    
+                    con1 = row_visit in range(0, row)
+                    con2 = col_visit in range(0, col)
+                    con3 = (row_visit, col_visit) in sea_set
+                    
+
+                    if con1 and con2 and not con3 and matrix[row_visit][col_visit] >= matrix[row_pop][col_pop]:
+                        stack.append((row_visit, col_visit))
+                        sea_set.add((row_visit, col_visit))  
+                                                  
+        for i in range(row):  
+            for j in range(col):  
+                #Visit Pacific
+                if i == 0 or j == 0 and (i,j) not in visited_pacific:
+                    dfs(i,j, visited_pacific)
+                if i == row - 1 or j == col - 1 and (i,j) not in visited_atlantic:
+                    dfs(i,j, visited_atlantic)
+
+                    
+        return list(visited_pacific.intersection(visited_atlantic))
+```
