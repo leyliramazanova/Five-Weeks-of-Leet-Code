@@ -158,7 +158,47 @@ is quite rare and usually not necessary.</p>
                 node.right = self.buildTree(preorder, inorder[idx+1:])
             return node
     ```
-- Top K Frequent Elements
-- Clone Graph
+- [Top K Frequent Elements]()
+    ```python
+    class Solution:
+        def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+            FrequencyMap = collections.Counter(nums)
+            
+            elememtList = []
+            for key in FrequencyMap:
+                elememtList.append((-FrequencyMap[key], key))
+            heapq.heapify(elememtList)
+            ans = []
+            for i in range(k):
+                ans.append(heapq.heappop(elememtList)[1])
+            return ans
+    ```
+- [Clone Graph](https://leetcode.com/problems/clone-graph/submissions/)
+    ```python
+    class Solution:
+        def cloneGraph(self, node: 'Node') -> 'Node':
+            
+            if not node:
+                return
+            
+            queue = collections.deque()
+            val = node.val
+            deepCopy = Node(val)
+            dic = {node: deepCopy}
+            
+            queue.append(node)
+            while queue:
+                curNode = queue.pop()
+                for neighbour in curNode.neighbors:
+                    if neighbour not in dic:
+                        val = neighbour.val
+                        deepCopyNeighbour = Node(val)
+                        dic[neighbour] = deepCopyNeighbour
+                        dic[curNode].neighbors.append(deepCopyNeighbour)
+                        queue.append(neighbour)
+                    else:
+                        dic[curNode].neighbors.append(dic[neighbour])
+            return deepCopy
+    ```
 - Course Schedule
 - Binary Tree Maximum Path Sum
