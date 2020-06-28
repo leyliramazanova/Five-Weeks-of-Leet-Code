@@ -228,7 +228,7 @@ is quite rare and usually not necessary.</p>
                 visited.add(i)
             return True
     ```
-- [Binary Tree Maximum Path Sum]
+- [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/submissions/)
     ```python
     class Solution:
         def maxPathSum(self, root: TreeNode) -> int:
