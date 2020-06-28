@@ -200,5 +200,49 @@ is quite rare and usually not necessary.</p>
                         dic[curNode].neighbors.append(dic[neighbour])
             return deepCopy
     ```
-- Course Schedule
-- Binary Tree Maximum Path Sum
+- [Course Schedule](https://yangshun.github.io/tech-interview-handbook/best-practice-questions/)
+    ```python
+    class Solution:
+        def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+            
+            preMap = dict()
+            for course, prereq in prerequisites:
+                preMap[course] = preMap.get(course, []) + [prereq]
+            visited = set()
+            
+            
+            def hasLoop(course, courseSet):
+                boole = True
+                if course in visited or course not in preMap:
+                    return True
+                if course in courseSet:
+                    return False
+                preReq = preMap[course]
+                for pre in preReq:
+                    boole = boole and hasLoop(pre, courseSet|{course})
+                return boole
+            
+            for i in range(numCourses):
+                if not hasLoop(i, set()):
+                    return False
+                visited.add(i)
+            return True
+    ```
+- [Binary Tree Maximum Path Sum]
+    ```python
+    class Solution:
+        def maxPathSum(self, root: TreeNode) -> int:
+            self.maxi = float('-inf')
+            def dfs(root):
+                if not root:
+                    return 0
+                left =max(0, dfs(root.left))
+                right = max(0, dfs(root.right))
+
+                #Remove the line below to calculate max sum from root
+                self.maxi = max(self.maxi, left + right + root.val)
+                
+                return max(left, right) + root.val
+            dfs(root)
+            return self.maxi
+    ```
