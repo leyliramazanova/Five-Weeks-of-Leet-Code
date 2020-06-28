@@ -246,3 +246,15 @@ is quite rare and usually not necessary.</p>
             dfs(root)
             return self.maxi
     ```
+    
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+    ```python
+    class Solution(object):
+        def maxDepth(self, root):
+            def maxi(root):
+                if not root:
+                    return 0
+                left = 1 + maxi(root.left)
+                right = 1 + maxi(root.right)
+                return max(left, right)
+            return maxi(root)
