@@ -258,3 +258,4 @@ is quite rare and usually not necessary.</p>
                 right = 1 + maxi(root.right)
                 return max(left, right)
             return maxi(root)
+     ```
