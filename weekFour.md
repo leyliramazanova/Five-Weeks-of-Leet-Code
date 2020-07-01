@@ -70,6 +70,7 @@ Step 3:
             return False
         
         return _search(word, self.trieNode)
+```
 - Implement Trie (Prefix Tree)
 - Subtree of Another Tree
 - Kth Smallest Element in a BST
