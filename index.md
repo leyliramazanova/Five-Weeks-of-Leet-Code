@@ -8,7 +8,9 @@ Questions based on [Yangshun's guide](https://yangshun.github.io/tech-interview-
 ).
 
 
-Useful links:
-* [WeekOne](WeekOne/weekOne.md)  **(9 questions)**
-* [WeekTwo](WeekTwo/weekTwo.md)  **(9 questions)**
+Progress Tracker links:
+* [WeekOne](weekOne.md)  **(9 questions)**
+* [WeekTwo](weekTwo.md)  **(9 questions)**
+* [WeekThree](weekThree.md)  **(10 questions)**
+* [WeekFour](weekFour.md)  **(2 questions^)**
 
