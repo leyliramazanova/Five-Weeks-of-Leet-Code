@@ -119,6 +119,26 @@
 			return True
 	```
 - Subtree of Another Tree
+
+	```
+	class Solution:
+	    def isSametree(self, s, t):
+		if not s and not t:
+		    return True
+		if (not s or not t):
+		    return False
+
+		return s.val == t.val and self.isSametree(s.left,t.left) & self.isSametree(s.right,t.right)
+
+
+	    def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
+		if not s:
+		    return False
+		if self.isSametree(s,t):
+		    return True
+		return self.isSubtree(s.left, t) or self.isSubtree(s.right, t) 
+	```
+
 - Kth Smallest Element in a BST
 - Lowest Common Ancestor of BST
 - Merge K Sorted Lists
