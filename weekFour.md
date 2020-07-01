@@ -5,7 +5,7 @@
 
 - [Add and Search Word](https://leetcode.com/problems/add-and-search-word-data-structure-design/discuss/714044/Fast-Short-Python-Trie-Solution-explained)
 	
-	```
+	```python
 		class TrieNode:
 		    def __init__(self):
 			self.trie = {}
@@ -118,9 +118,9 @@
 				return False
 			return True
 	```
-- Subtree of Another Tree
+- [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/submissions/)
 
-	```
+	```python
 	class Solution:
 	    def isSametree(self, s, t):
 		if not s and not t:
