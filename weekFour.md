@@ -141,7 +141,7 @@
 
 - [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/)
 
-```python
+	```python
 	class Solution:
 	    def traverse(self, liste, node):
 		    if node.left:
@@ -155,7 +155,7 @@
 		l = []
 		self.traverse(l, root)
 		return l[k - 1]
-```
+	```
 - Lowest Common Ancestor of BST
 - Merge K Sorted Lists
 - Find Median from Data Stream
