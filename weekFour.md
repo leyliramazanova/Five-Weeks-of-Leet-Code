@@ -143,18 +143,18 @@
 
 ```python
 	class Solution:
-    def traverse(self, liste, node):
-            if node.left:
-                self.traverse(liste, node.left)
-            liste.append(node.val)
-            if node.right:
-                self.traverse(liste, node.right)
-    
-    def kthSmallest(self, root: TreeNode, k: int) -> int:
-            
-        l = []
-        self.traverse(l, root)
-        return l[k - 1]
+	    def traverse(self, liste, node):
+		    if node.left:
+			self.traverse(liste, node.left)
+		    liste.append(node.val)
+		    if node.right:
+			self.traverse(liste, node.right)
+
+	    def kthSmallest(self, root: TreeNode, k: int) -> int:
+
+		l = []
+		self.traverse(l, root)
+		return l[k - 1]
 ```
 - Lowest Common Ancestor of BST
 - Merge K Sorted Lists
