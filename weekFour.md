@@ -151,7 +151,6 @@
 			self.traverse(liste, node.right)
 
 	    def kthSmallest(self, root: TreeNode, k: int) -> int:
-
 		l = []
 		self.traverse(l, root)
 		return l[k - 1]
