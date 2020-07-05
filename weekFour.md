@@ -194,6 +194,27 @@
 			return root
 	```
 - Merge K Sorted Lists
+	- Brute Force Approach
+	```python
+		class Solution:
+		    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+			bigList = []
+			for l in lists:
+			    while l != None:
+				bigList.append(l.val)
+				l = l.next 
+			bigList = sorted(bigList)
+			node = None
+			nodeCopy = None
+			for val in bigList:
+			    if not node:
+				node = ListNode(val)
+				nodeCopy = node
+			    else:
+				node.next = ListNode(val)
+				node = node.next
+			return nodeCopy
+	```
 - Find Median from Data Stream
 - Insert Interval
 - Longest Consecutive Sequence
