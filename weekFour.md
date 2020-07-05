@@ -234,4 +234,22 @@
 		    longestStreak = max(longest, longestStreak)
 		return longestStreak
 	```
+	
+	- Optimised
+	```python
+	class Solution:
+	    def longestConsecutive(self, nums):
+		longest_streak = 0
+		num_set = set(nums)
+
+		for num in num_set:
+		    if num - 1 not in num_set:
+			cur_num = num
+			longest = 0
+			while cur_num in num_set:
+			    cur_num += 1
+			    longest += 1
+			longest_streak = max(longest_streak, longest)
+		return longest_streak
+	```
 - Word Search II
