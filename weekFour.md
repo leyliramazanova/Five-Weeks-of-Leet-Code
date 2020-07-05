@@ -155,7 +155,44 @@
 		self.traverse(l, root)
 		return l[k - 1]
 	```
-- Lowest Common Ancestor of BST
+- [Lowest Common Ancestor of BST]()
+	- Recursive
+	```python
+		class Solution:
+		    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+			p_val = p.val
+			q_val = q.val
+
+			root_val = root.val
+
+			if p_val > root_val and q_val > root_val:
+			    return self.lowestCommonAncestor(root.right, p, q)
+
+			if p_val < root_val and q_val < root_val:
+			    return self.lowestCommonAncestor(root.left, p, q)
+
+			else:
+			    return root
+	```
+	
+	- Iterative
+	```python
+	class Solution:
+    		def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+		p_val = p.val
+		q_val = q.val
+        
+		while root:
+
+		    root_val = root.val
+
+		    if p_val > root_val and q_val > root_val:
+			root = root.right
+		    elif p_val < root_val and q_val < root_val:
+			root = root.left
+		    else:
+			return root
+	```
 - Merge K Sorted Lists
 - Find Median from Data Stream
 - Insert Interval
