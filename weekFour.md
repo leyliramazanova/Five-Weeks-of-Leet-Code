@@ -155,7 +155,7 @@
 		self.traverse(l, root)
 		return l[k - 1]
 	```
-- [Lowest Common Ancestor of BST]()
+- [Lowest Common Ancestor of BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 	- Recursive
 	```python
 		class Solution:
@@ -178,10 +178,10 @@
 	- Iterative
 	```python
 	class Solution:
-    		def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+    	    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
 		p_val = p.val
 		q_val = q.val
-        
+
 		while root:
 
 		    root_val = root.val
