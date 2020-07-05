@@ -217,5 +217,21 @@
 	```
 - Find Median from Data Stream
 - Insert Interval
-- Longest Consecutive Sequence
+
+- [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/submissions/)
+	- Brute Force
+	```python
+	class Solution:
+	    def longestConsecutive(self, nums: List[int]) -> int:
+		numSet = set(nums)
+		longestStreak = 0
+		for num in nums:
+		    curNum = num + 1
+		    longest = 1
+		    while curNum in numSet:
+			curNum += 1
+			longest += 1
+		    longestStreak = max(longest, longestStreak)
+		return longestStreak
+	```
 - Word Search II
