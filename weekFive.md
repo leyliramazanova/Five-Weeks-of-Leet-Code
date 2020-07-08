@@ -35,3 +35,28 @@
               dp[i] = max(dp[i - 2] + nums[i], dp[i-1])
           return dp[len(nums) - 1]
       ```
+      
+  - Dynamic= recursive
+  
+  ```python
+  class Solution:
+    def rob(self, nums: List[int]) -> int:  
+        n = len(nums)
+        if not n:
+            return 0
+        memo = [None] * n
+        
+        def steal(n):
+            if memo[n] != None:
+                return memo[n]
+            if n == 0:
+                result = nums[0]
+            elif n == 1:
+                result = max(nums[0], nums[1])
+            else:
+                result = max(steal(n-1),  nums[n] + steal(n-2))
+            memo[n] = result
+            return result
+        
+        return steal(n -1)
+    ```
