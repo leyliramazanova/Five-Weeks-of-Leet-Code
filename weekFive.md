@@ -72,3 +72,31 @@
             max_sum = max(cur_sum, max_sum)
         return max_sum
    ```
+   
+   
+- [Rotate Array](https://leetcode.com/problems/rotate-array/submissions/)
+  ```python
+  class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        n = len(nums)
+        k = k % n
+        
+        start = count = 0
+        
+        while count < n:
+            current_idx = start
+            prev_num = nums[start]
+            while True:
+                next_idx = (current_idx + k) % n
+                nums[next_idx], prev_num = prev_num, nums[next_idx]
+                current_idx = next_idx
+                count += 1
+                
+                if start == current_idx:
+                    break
+            start += 1
+     ```
