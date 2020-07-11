@@ -117,3 +117,29 @@
               memo[i] = memo[i - 1] +2 + memo[i-2] 
           return memo[n-1]
  ```
+ 
+ - [Move Zeros](https://leetcode.com/problems/move-zeroes/submissions/)
+ ```python
+ class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        count = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[count] = nums[i]
+                count += 1
+        while count < len(nums):
+            nums[count] = 0
+            count += 1
+  ```
+  
+  
+  - [Single Number](https://leetcode.com/problems/single-number/)
+
+```python
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        dicte = Counter(nums)
+        for num in dicte:
+            if dicte[num] == 1:
+                return num
+```
