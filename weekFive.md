@@ -143,3 +143,16 @@ class Solution:
             if dicte[num] == 1:
                 return num
 ```
+
+- [TwoSum](https://leetcode.com/problems/two-sum/submissions/)
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dicte = {}
+        for idx, val in enumerate(nums):
+            remain = target - val
+            if remain in dicte:
+                return [dicte[remain], idx]
+            else:
+                dicte[val] = idx
+```
