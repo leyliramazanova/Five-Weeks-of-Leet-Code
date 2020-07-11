@@ -222,3 +222,18 @@ class Solution:
         cond2 = self.isSame(root1.left, root2.right) and self.isSame(root1.right, root2.left)
         return cond1 and cond2
 ```
+
+- [Intersection of two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/submissions/)
+```python
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        headA_set = set()
+        while headA:
+            headA_set.add(headA)
+            headA = headA.next
+        while headB:
+            if headB in headA_set:
+                return headB
+            headB = headB.next
+        return None
+```
