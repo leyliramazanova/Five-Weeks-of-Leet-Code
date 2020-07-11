@@ -156,3 +156,35 @@ class Solution:
             else:
                 dicte[val] = idx
 ```
+
+- [SubArray](https://leetcode.com/problems/maximum-subarray/)
+```python
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        cur = 0
+        maxi = float('-inf')
+        for num in nums:
+            cur = cur + num
+            maxi = max(cur, maxi)
+            if cur < 0:
+                cur = 0
+        return maxi
+```
+
+- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/)
+  ```python
+  class Solution:
+      def maxProfit(self, prices: List[int]) -> int:
+          start = None
+          maxProfit = 0
+          for stock in prices:
+              if start is None:
+                  start = stock
+              else:            
+                  if start >= stock:          
+                      start = stock     
+                  else:
+                      profit = stock - start
+                      maxProfit = max(profit, maxProfit)
+          return maxProfit
+  ```
