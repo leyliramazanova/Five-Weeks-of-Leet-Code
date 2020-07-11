@@ -188,3 +188,37 @@ class Solution:
                       maxProfit = max(profit, maxProfit)
           return maxProfit
   ```
+  
+- [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+```python
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        if not head:
+            return None
+        curNode = head
+        prev = None
+        while curNode.next:
+            next_node = curNode.next
+            curNode.next = prev
+            prev = curNode
+            curNode = next_node
+            
+        curNode.next = prev
+        return curNode
+```
+
+- [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/submissions/)
+```python
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        return self.isSame(root, root)
+    
+    def isSame(self, root1, root2):
+        if not root1 and not root2:
+            return True
+        if not root1 or not root2:
+            return False
+        cond1 = root1.val == root2.val
+        cond2 = self.isSame(root1.left, root2.right) and self.isSame(root1.right, root2.left)
+        return cond1 and cond2
+```
