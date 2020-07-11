@@ -237,3 +237,31 @@ class Solution:
             headB = headB.next
         return None
 ```
+
+```python
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        lengthA = self.length(headA)
+        lengthB = self.length(headB)
+        diff = lengthA - lengthB
+        if diff > 0:
+            for i in range(diff):
+                headA = headA.next
+        elif diff < 0:
+            for i in range(-diff):
+                headB = headB.next
+        if headA:
+            prev1 = headA.val
+        if headB:
+            prev2 = headB.val
+        while headA:
+            if headA.val == headB.val and prev1 != 0 and prev2 != 0:
+                return headA
+            else:
+                if headA:
+                    prev1 = headA.val
+                if headB:
+                    prev2 = headB.val
+                headA = headA.next
+                headB = headB.next
+        return None
+```
