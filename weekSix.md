@@ -28,7 +28,7 @@
           return copy.next
   ``` 
 
-[Path Sum III](https://leetcode.com/problems/path-sum-iii/submissions/)
+- [Path Sum III](https://leetcode.com/problems/path-sum-iii/submissions/)
   ```python
   class Solution:
       def pathSum(self, root: TreeNode, sum: int) -> int:
