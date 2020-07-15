@@ -100,3 +100,16 @@
           self.invertTree(root.right)
           return root
   ```
+
+- [Majority element](https://leetcode.com/problems/majority-element/solution/)
+```
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        keyMap = {}
+        n = len(nums)
+        for num in nums:
+            keyMap[num] = keyMap.get(num, 0) + 1
+            if keyMap[num] > n // 2:
+                return num
+        return None
+```
