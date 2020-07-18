@@ -165,3 +165,41 @@ class Solution:
       return result
   ```
 
+- [Shortest Unsorted Array](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
+```
+class Solution:
+    def findUnsortedSubarray(self, nums: List[int]) -> int:
+        start = stop = None
+        n = len(nums)
+        for i in range(n):
+            smallest, idx = nums[i], i
+            for j in range(i, n):
+                if nums[j] < smallest:
+                    smallest, idx = nums[j], j
+            if idx != i:
+                if not start and not stop:   
+                    start = i
+                    stop = idx  
+                stop = max(stop, idx)   
+            nums[idx], nums[i] = nums[i], nums[idx]
+        if start or stop:
+            return stop - start + 1
+        else:
+            return 0
+```
+
+```python
+class Solution:
+    def findUnsortedSubarray(self, nums: List[int]) -> int:
+        sortedNums = sorted(nums)
+        start = len(nums)
+        end = 0
+        for i in range(len(nums)):
+            if nums[i] != sortedNums[i]:
+                start = min(start, i)
+                end = max(end, i)
+                
+        count = (end - start) + 1
+           
+        return count if count >= 0 else 0
+``` 
