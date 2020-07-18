@@ -113,3 +113,20 @@ class Solution:
                 return num
         return None
 ```
+
+- [Find All Numbers Disappeared in An Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/submissions/)
+```python
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        length = len(nums)
+        for i in range(length):
+            val = abs(nums[i]) - 1
+            nums[val] = abs(nums[val]) * - 1
+        result = []
+        for i in range(length):
+            if nums[i] > 0:
+                result.append(i + 1)
+        return result
+```
+
+
