@@ -129,4 +129,39 @@ class Solution:
         return result
 ```
 
+- [Is Palindrome Number](https://leetcode.com/problems/palindrome-number/submissions/)
+  ```python
+  class Solution:
+      def isPalindrome(self, x: int) -> bool:
+          copy_x = x
+          if x < 0:
+              return False
+          revert = 0
+          while x > 0:
+              revert = revert*10 + (x%10)
+              x = x // 10
+          return (copy_x == revert)
+  ```
+  
+ - [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/submissions/)
+```python
+class Solution:
+  def longestCommonPrefix(self, strs: List[str]) -> str:
+      if not strs:
+          return "" 
+      if len(strs) == 1:
+          return strs[0]
+      result = ""
+      f_str = strs[0]
+      for i in range(len(f_str)):
+          cur_char = f_str[i]
+          for j in range(1, len(strs)):
+              if i > len(strs[j]) - 1:
+                  return result
+              comp_char = strs[j][i]
+              if comp_char != cur_char:
+                  return result
+          result += cur_char
+      return result
+  ```
 
