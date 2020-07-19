@@ -270,3 +270,33 @@ class Solution:
                 if el == 1:
                     return dfs(grid, row, col, 0, set())
 ```  
+
+```python
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        def dfs(grid, row, col, perimeter, visited):
+            stack = collections.deque()
+            stack.append((row, col))
+            visited.add((row, col))
+            len_col = len(grid[0])
+            len_row = len(grid)
+            while stack:
+                o_row, o_col = stack.popleft()
+                movements = [(0,1), (0,-1), (1,0), (-1,0)]
+                for r, c in movements:
+                    ro = o_row + r
+                    co = o_col + c
+                    if (ro in range(len_row)) and (co in range(len_col)) and grid[ro][co] == 1:
+                        if (ro, co) not in visited:
+                            visited.add((ro, co))
+                            stack.append((ro, co))
+                    else:
+                        perimeter += 1
+            return perimeter
+                
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                el = grid[row][col]
+                if el == 1:
+                    return dfs(grid, row, col, 0, set())
+```  
