@@ -268,3 +268,14 @@ class Solution:
                 if el == 1:
                     return dfs(grid, row, col, 0, set())
 ```  
+
+- [First Unique Character](https://leetcode.com/problems/first-unique-character-in-a-string/submissions/)
+```python
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        keyMap = collections.Counter(s)
+        for i in range(len(s)):
+            if keyMap[s[i]] == 1:
+                return i
+        return -1
+```
