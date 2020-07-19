@@ -1,4 +1,4 @@
-## ??/40 Easy Questions in a week to polish coding skills based on this [guide](https://learntocodetogether.com/top-150-leetcodes-best-practice-problems/)
+## 13/40 Easy Questions in a week to polish coding skills based on this [guide](https://learntocodetogether.com/top-150-leetcodes-best-practice-problems/)
 
 
 - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
