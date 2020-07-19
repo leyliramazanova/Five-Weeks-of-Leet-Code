@@ -203,3 +203,36 @@ class Solution:
            
         return count if count >= 0 else 0
 ``` 
+
+- [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/submissions/)
+```python
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        fast = head
+        slow = self.reverse(slow)
+        
+        while slow:
+            if fast.val != slow.val:
+                return False
+            fast = fast.next
+            slow = slow.next
+        return True
+    
+    def reverse(self, head):
+        if not head:
+            return
+        prev = None
+        while head:
+            next = head.next
+            head.next = prev
+            prev = head
+            if next:
+                head = next
+            else:
+                break
+        return head
+```
