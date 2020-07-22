@@ -1,4 +1,4 @@
-
+# Random Problems this week
 
 - [Count Primes](https://leetcode.com/problems/count-primes/submissions/)
 ```python
@@ -41,3 +41,20 @@ class Solution:
         return res
 ```
         
+- [Validate Stack Sequences](https://leetcode.com/problems/validate-stack-sequences/)
+```python
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        stack = []
+        j = 0
+        
+        for num in pushed:
+            stack.append(num)
+            
+            while stack and stack[-1] == popped[j]:
+                stack.pop()
+                j += 1
+        return j == len(popped)
+```
+
+
