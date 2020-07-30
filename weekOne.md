@@ -104,7 +104,8 @@ class Solution:
 - [Maximum Subarray](https://leetcode.com/problems/maximum-subarray)
 
     - Divide and Conquer Approach 
-        - The idea is to find the max of left, right and mid using a recursive formula an return the mid.
+     - The idea is to find the max of left, right and mid using a recursive formula an return the mid.
+        
     ```python
   class Solution:
     def maxSubArray(self, nums):
