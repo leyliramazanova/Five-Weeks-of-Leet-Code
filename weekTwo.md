@@ -207,6 +207,7 @@ class Solution:
     ```
   
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/solution/)
+  - The idea is to move the wondow until you find the string that has all the characters in the target string t and then continious shrink the window while keeping track of the best possible combination.
 
 ```python
 class Solution:
