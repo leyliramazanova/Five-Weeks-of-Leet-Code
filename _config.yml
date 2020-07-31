@@ -17,3 +17,9 @@ navigation:
     url: weekFive
   - title: Week Six 
     url: weekSix
+  - title: Week Seven 
+    url: weekSeven
+  - title: Week Eight
+    url: weekEight
+  - title: Week Nine
+    url: weekNine
