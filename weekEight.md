@@ -52,3 +52,19 @@
     }
 }
 ```
+
+- [Scala- Insert Position](https://leetcode.com/problems/search-insert-position/submissions/)
+  ```scala
+  object Solution {
+      def searchInsert(nums: Array[Int], target: Int): Int = {
+          val leng = nums.length 
+          def helper(index:Int): Int = {
+              val current = nums(index)
+              if (current >= target) index
+              else if (index == leng - 1) leng
+              else helper(index + 1)
+          }
+          helper(0)
+      }
+  }
+  ```
