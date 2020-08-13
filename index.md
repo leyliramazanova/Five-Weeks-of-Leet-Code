@@ -9,5 +9,5 @@ Questions based on [Yangshun's guide](https://yangshun.github.io/tech-interview-
 
 EOP timeline
 
-![Image of Yaktocat](EOP timeline.png)
+![Image of EOP timeline](EOP timeline.png)
 
