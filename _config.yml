@@ -5,6 +5,8 @@ show_downloads: True
 navigation:
   - title: Home
     url: /
+  - title: Elements of Programming Question
+    url: EOP
   - title: Week One 
     url: weekOne
   - title: Week Two 
