@@ -7,10 +7,7 @@ layout: default
 Questions based on [Yangshun's guide](https://yangshun.github.io/tech-interview-handbook/best-practice-questions/
 ).
 
+EOP timeline
 
-Progress Tracker links:
-* [WeekOne](weekOne.md)  **(9 questions)**
-* [WeekTwo](weekTwo.md)  **(9 questions)**
-* [WeekThree](weekThree.md)  **(10 questions)**
-* [WeekFour](weekFour.md)  **(2 questions^)**
+![Image of Yaktocat](EOP timeline.png)
 
