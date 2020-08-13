@@ -1,27 +1,10 @@
 theme: jekyll-theme-minimal
-title: Alaukik's Algorithms Progress Tracker
-description: Leetcode questions solved by Alaukik
+title: Leyli's Algorithms Progress Tracker
+description: Leetcode questions solved by Leyli
 show_downloads: True
 navigation:
   - title: Home
     url: /
   - title: Elements of Programming Question
     url: EOP
-  - title: Week One 
-    url: weekOne
-  - title: Week Two 
-    url: weekTwo
-  - title: Week Three 
-    url: weekThree
-  - title: Week Four 
-    url: weekFour
-  - title: Week Five 
-    url: weekFive
-  - title: Week Six 
-    url: weekSix
-  - title: Week Seven 
-    url: weekSeven
-  - title: Week Eight
-    url: weekEight
-  - title: Week Nine
-    url: weekNine
+  
